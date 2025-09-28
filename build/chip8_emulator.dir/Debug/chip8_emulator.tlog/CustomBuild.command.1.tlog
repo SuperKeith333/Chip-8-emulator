@@ -1,0 +1,10 @@
+^C:\USERS\SALMON\DOCUMENTS\CHIP-8 EMULATOR\CMAKELISTS.TXT
+setlocal
+C:\Strawberry\c\bin\cmake.exe "-SC:/Users/Salmon/Documents/Chip-8 emulator" "-BC:/Users/Salmon/Documents/Chip-8 emulator/build" --check-stamp-file "C:/Users/Salmon/Documents/Chip-8 emulator/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
