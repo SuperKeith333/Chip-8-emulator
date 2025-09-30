@@ -3,7 +3,7 @@ project(chip8_emulator LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_PREFIX_PATH "C:/Users/Salmon/vcpkg/installed/x64-windows/share")
+set(CMAKE_PREFIX_PATH "C:/Users/Keith/vcpkg/installed/x64-windows/share")
 
 # Find SDL2 via vcpkg
 find_package(SDL2 CONFIG REQUIRED)

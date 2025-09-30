@@ -1,2 +1,0 @@
-C:\Users\Salmon\Documents\Chip-8 emulator\build\Release\SDL2.dll
-C:\Users\Salmon\Documents\Chip-8 emulator\build\chip8_emulator.dir\Release\chip8_em.60377D72.Up2Date

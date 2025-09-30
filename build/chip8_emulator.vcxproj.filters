@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\Salmon\Documents\Chip-8 emulator\src\main.cpp">
+    <ClCompile Include="D:\Chip-8-emulator\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Salmon\Documents\Chip-8 emulator\CMakeLists.txt" />
+    <CustomBuild Include="D:\Chip-8-emulator\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6A3AE9E1-43C0-3F41-9C1F-3689E906EE59}</UniqueIdentifier>
+      <UniqueIdentifier>{33237477-A2AF-3626-8B55-F3F554C9D39A}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

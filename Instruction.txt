@@ -1,0 +1,47 @@
+6A02 : put 0x02 (2) into register A
+6B0C : put 0x0C (12) into register B
+6C3F : put 0x3F (63) into register C
+6D0C : put 0x0C (12) into register D
+A2EA : Set I to 0x2EA (746)
+DAB6 : Display Bytes (local location 234, 80, 80, 80, 80, 80, 00) at X = RegA(2) Y = RegB(12)
+DCD6 : Display Bytes (local location 234, 80, 80, 80, 80, 80, 00) at X = RegC(63) Y = RegD(12)
+6E00 : Put 0x00 (0) into register E
+22D4 : Adds PC to top of stack (0x12, 12) then goes to instruction 2D4 (local location 212)
+A2F2 : Set I to 0x2F2 (754)
+FE33 : Takes the decimal value of RegE(0), and put 0 into I(754), 0 into I(755), 0 into I(756)
+F265 : Puts the values starting from I (754) into registers V0 (0), 1 (0), 2 (0)
+F129 : Set the location of I to the location of the hex sprite corresponding to Reg1 (0)
+6414 : put 0x14 (20) into register 4
+6500 : out 0x00 (0) into register 5
+D455 : Display Bytes (location 80, 240, 144, 144, 144, 240) at X = Reg4(20) Y = Reg5(5)
+7415 : adds 15 to Reg4(20) = 35
+F229 : Set the location of I to the location of the hex sprite corresponding to Reg2 (0)
+D455 : Display Bytes (location 80, 240, 144, 144, 144, 240) at X = Reg4(20) Y = Reg5(5)
+00EE : Return to instruction 0x12 (12) and remove it from the stack
+6603 : Put 0x03 (3) into register 6
+6802 : Put 0x02 (2) into register 8
+6060 : Put 0x60 (96) into register 0
+F015 : Set the delay timer to Reg0(96)
+F007 : Set Reg0 to delay timer
+3000 : Skip next instruction if 0x00 (0) is equal to Reg0
+121A : Set PC to local instruction (26, F007)
+C717 : 17 is ANDED to and random number, result stored in Reg7
+7708 : adds 0x08 (8) to Reg7, result stored in Reg7
+69FF : Puts 0xFF (255) into register 9
+A2F0 : Set I to 0x2F0 (752)
+D671 : Display bytes (location 240, 80) at X = Reg6(3) Y = Reg7
+A2EA : Set I to 0x2EA (746)
+DAB6 : Display Bytes (local location 234, 80, 80, 80, 80, 80, 00) at X = RegA(2) Y = RegB(12)
+DCD6 : Display Bytes (local location 234, 80, 80, 80, 80, 80, 00) at X = RegC(63) Y = RegD(12)
+6001 : Put 0x01 (1) into register 0
+E0A1 : Skip the next instruction if Reg0 is not pressed
+7BFE : Adds 0xFE (254) to RegB(12, 11 or 266)
+6004 : Puts 0x04 (4) into register 0
+E0A1 : Skip the next instruction if Reg0 is not pressed
+7D02 : Adds 0x02 (2) to RegD(12, 14)
+601F : Put 0x1F (31) into register 0
+8B02 : RegB(12), Reg0(31) are ANDED, result stored in RegB(0)
+DAB6 : Display Bytes (local location 234, 80, 80, 80, 80, 80, 00) at X = RegA(2) Y = RegB(0)
+600C : put 0x0C (12) into register 0
+E0A1 : Skip the next instruction if Reg0 is not pressed
+7DFE : 

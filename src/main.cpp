@@ -167,8 +167,10 @@ int main(int argc, char* argv[]) {
             const int CYCLES_PER_FRAME = 10;
             for (int i = 0; i < CYCLES_PER_FRAME; i++) {
                 uint16_t instruction = (memory[PC] << 8) | memory[PC + 1];
-                std::cout << "Current Instruction: " << std::hex << instruction << std::endl;
+                //std::cout << "Current Instruction: " << std::hex << instruction << std::endl;
                 
+                //std::cout << static_cast<int>(V[0]) << std::endl;
+
                 PC += 2;
 
                 switch (instruction & 0xF000) {
@@ -193,13 +195,15 @@ int main(int argc, char* argv[]) {
                     sp++;
                     PC = instruction & 0x0FFF;
                     break;
-                case 0x3000:
-                    if (V[(instruction & 0x0F00) >> 8] == V[instruction & 0x00FF]) {
+                case 0x3000: {
+                    if (V[(instruction & 0x0F00) >> 8] == (instruction & 0x00FF)) {
                         PC += 2;
                     }
+                
                     break;
+                }
                 case 0x4000:
-                    if (V[(instruction & 0x0F00) >> 8] != V[instruction & 0x00FF]) {
+                    if (V[(instruction & 0x0F00) >> 8] != (instruction & 0x00FF)) {
                         PC += 2;
                     }
                     break;
@@ -214,7 +218,7 @@ int main(int argc, char* argv[]) {
                     break;
                 }
                 case 0x7000:
-                    V[(instruction & 0x0F00) >> 8] += instruction & 0x00FF;
+                    V[(instruction & 0x0F00) >> 8] = (instruction & 0x00FF) + V[(instruction & 0x0F00) >> 8];
                     break;
                 case 0x8000:
                     switch (instruction & 0x000F) {
@@ -290,7 +294,8 @@ int main(int argc, char* argv[]) {
                     break;
                 case 0xC000: {
                     uint8_t rand = static_cast<uint8_t>(distrib(gen));
-                    V[(instruction & 0x0F00) >> 8] = (instruction & 0x0FF) & rand;
+                    int kk = (instruction & 0x0FF);
+                    V[(instruction & 0x0F00) >> 8] = kk & rand;
                     break;
                 }
                 case 0xD000: {
@@ -355,7 +360,7 @@ int main(int argc, char* argv[]) {
                             ST = V[(instruction & 0x0F00) >> 8];
                             break;
                         case 0x001E:
-                            I += V[(instruction & 0x0F00) >> 8];
+                            I = I + V[(instruction & 0x0F00) >> 8];
                             break;
                         case 0x0029: {
                             uint8_t x = (instruction & 0x0F00) >> 8;  // get register index
@@ -395,6 +400,7 @@ int main(int argc, char* argv[]) {
 
         // Timers
         auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastTimerUpdate);
+        //std::cout << static_cast<int>(DT) << std::endl;
         if (elapsed.count() >= 16) { // ~60Hz
             if (DT > 0) DT--;
             if (ST > 0) ST--;

@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Salmon\Documents\Chip-8 emulator\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>D:\Chip-8-emulator\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
